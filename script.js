@@ -60,3 +60,14 @@ function ExibirReserva(reserva) {
     let exibirHotel = idsHotel.indexOf(indexHotel)
     console.log("Nome Hotel: " + nomesHotel[exibirHotel] + " | Endereço: " + enderecosHotel[exibirHotel] + " | Entrada: " + diaEntrada[exibirReserva] + " | Saida: " + diaSaida[exibirReserva])
 }
+
+function ReservaDoUsuario(nome) {
+    let indexNome = nomesResponsavelReserva.indexOf(nome)
+    let hotel = idsHotelReserva[indexNome]
+    let indexHotel = idsHotel.indexOf(hotel)
+    nomesResponsavelReserva.forEach(x => {
+        if (x == nome) {
+            console.log("Nome Responsavel: " + nomesResponsavelReserva[indexNome] + " | Nome Hotel: " + nomesHotel[indexHotel] + " | ID Reserva: " + idsReserva[indexNome])
+        }
+    })
+}
