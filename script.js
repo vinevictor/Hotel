@@ -41,3 +41,15 @@ function CadastroReserva() {
     idReserva++
     alert("Reserva efetuada.")
 }
+
+function ReservasHotel(idExReservaHotel) {
+    let contadorExibir = 0
+    let exibirHotel = idsHotel.indexOf(idExReservaHotel)
+    idsHotelReserva.forEach(x => {
+
+        if (x == idExReservaHotel) {
+            console.log("Nome Hotel" + nomesHotel[exibirHotel] + "Nome Responsavel:" + nomesResponsavelReserva[contadorExibir] + "Ëntrada:" + diaEntradata[contadorExibir] + "Saida:" + diaSaida)
+        }
+    })
+}
+
