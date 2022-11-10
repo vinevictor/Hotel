@@ -21,9 +21,16 @@ function CadastroReserva() {
 
     nomesResponsavelReserva.push(prompt("Nome do Responsavel:"));
     let nomeHotelReserva = prompt("Nome Do Hotel:")
-
-    let index = nomesHotel.indexOf(nomeHotelReserva);
-    idsHotelReserva.push(idsHotel[index]);
+    let validacaoHotel = false
+    while (validacaoHotel == false) {
+        if (nomesHotel.includes(nomeHotelReserva)) {
+            let index = nomesHotel.indexOf(nomeHotelReserva);
+            idsHotelReserva.push(idsHotel[index]);
+            validacaoHotel == true
+        } else {
+            alert("Hotel Invalido.")
+        }
+    }
 
     let validDiaEntrada = parseInt(prompt("Dia Entrada:"));
     let validDiaSaida = parseInt(prompt("Dia Saida:"));
@@ -85,3 +92,47 @@ function ExibirHoteisDaCategoria(categoria) {
     console.log(arrSupHotel)
 }
 
+function AtualizarTelefoneHotel(nomeHotel, telefoneAtualizado) {
+    let indexHotel = nomesHotel.indexOf(nomeHotel)
+    telefonesHotel[indexHotel] = telefoneAtualizado
+    console.log("Telefone atualizado.")
+}
+
+function Opcoes() {
+    let opcao = prompt("1 => CadastroHotel | 2 => CadastroReserva | 3 => Exibir Reserva | 4 => Exibir Reservas do Usuario | 5 => Exibir Hoteis por Categoria | 6 => Atualizar Telefone | 7 => Encerrar.")
+    switch (opcao) {
+        case "1":
+            CadastroHotel();
+            break;
+        case "2":
+            CadastroReserva();
+            break;
+        case "3":
+            let idsHotelReserva = prompt("Digite o ID da reserva:")
+            ReservasHotel(idsHotelReserva);
+            break;
+        case "4":
+            let nome = prompt("Nome Do responsavel:")
+            break;
+        case "5":
+            let categoria = parseInt(prompt("Digite a Categoria"))
+            ExibirHoteisDaCategoria(categoria);
+            break;
+        case "6":
+            let nomeHotel = prompt("Nome do Hotel:")
+            let telefoneAtualizado = prompt("Telefone atualizado: ")
+            AtualizarTelefoneHotel(nomeHotel, telefoneAtualizado)
+            break;
+        case "7":
+            continuar = false;
+            break;
+        default:
+            alert("Opção Inválida")
+            break;
+    }
+}
+
+let continuar = true;
+while (continuar) {
+    Opcoes();
+}
