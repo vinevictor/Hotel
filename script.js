@@ -48,8 +48,15 @@ function ReservasHotel(idExReservaHotel) {
     idsHotelReserva.forEach(x => {
 
         if (x == idExReservaHotel) {
-            console.log("Nome Hotel" + nomesHotel[exibirHotel] + "Nome Responsavel:" + nomesResponsavelReserva[contadorExibir] + "Ëntrada:" + diaEntradata[contadorExibir] + "Saida:" + diaSaida)
+            console.log("Nome Hotel: " + nomesHotel[exibirHotel] + " | Nome Responsavel: " + nomesResponsavelReserva[contadorExibir] + " | Ëntrada: " + diaEntradata[contadorExibir] + " | Saida: " + diaSaida)
         }
+        contadorExibir++
     })
 }
 
+function ExibirReserva(reserva) {
+    let exibirReserva = idsReserva.indexOf(reserva)
+    let indexHotel = idsHotelReserva[exibirReserva]
+    let exibirHotel = idsHotel.indexOf(indexHotel)
+    console.log("Nome Hotel: " + nomesHotel[exibirHotel] + " | Endereço: " + enderecosHotel[exibirHotel] + " | Entrada: " + diaEntrada[exibirReserva] + " | Saida: " + diaSaida[exibirReserva])
+}
