@@ -71,3 +71,17 @@ function ReservaDoUsuario(nome) {
         }
     })
 }
+
+
+function ExibirHoteisDaCategoria(categoria) {
+    let contadorHotel = 0
+    let arrSupHotel = []
+    categoriasHotel.forEach(x => {
+        if (x == categoria) {
+            arrSupHotel.push(nomesHotel[categoria])
+        }
+        contadorHotel++
+    })
+    console.log(arrSupHotel)
+}
+
